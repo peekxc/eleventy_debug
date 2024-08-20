@@ -1,0 +1,15 @@
+extends ./baseof.pug 
+
+block main 
+	main(style="color: red;")
+		!= content 
+	h2 Blog posts
+	each post in [...collections.post].reverse()
+		!= post.content
+		//- != post.templateContent
+		//- iframe(src=post.url)
+		//- include ../_site/post1/index.html
+		//- != fs.readFileSync(post.page.outputPath, "utf8")
+
+block scripts 
+	- console.log("Scripts loaded!")
